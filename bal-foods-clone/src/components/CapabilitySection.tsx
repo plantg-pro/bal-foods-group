@@ -27,7 +27,7 @@ const CapabilitySection = () => {
   const gridAnim = useScrollAnimation(0.1);
 
   return (
-    <section id="capability" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="capabilities" className="py-24 md:py-32 relative overflow-hidden">
       <div className="circle-accent w-[350px] h-[350px] right-0 -bottom-20 opacity-30" />
 
       <div className="container mx-auto px-6 relative z-10">

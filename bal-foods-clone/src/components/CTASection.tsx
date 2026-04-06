@@ -106,7 +106,7 @@ const CTASection = () => {
           }`}
         >
           <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-tight mb-6 text-primary-foreground italic text-center">
-            Curating Australia's Finest for International Markets
+            Let BAL Bring Australia to You
           </h2>
 
           <p className="font-body text-lg text-primary-foreground/60 mb-10 leading-relaxed text-center">

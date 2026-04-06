@@ -27,7 +27,7 @@ const AboutSection = () => {
             </p>
 
             <p className="font-body text-muted-foreground leading-relaxed">
-              We work with a curated network of trusted producers to deliver consistent, export-ready supply across protein and value-added categories.
+              We work with a curated network of trusted producers to deliver consistent, export-ready supply across protein, produce and value-added categories.
             </p>
           </div>
 

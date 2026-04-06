@@ -1,61 +1,63 @@
 import { Link } from "react-router-dom";
+import balLogoAlt from "@/assets/bal-logo-alt.svg";
 
 const HeroSection = () => {
+  const enquiryUrl =
+    "https://docs.google.com/forms/d/e/1FAIpQLSdUOFFWqiqtQhZlJVuMqeXWAoyxTPRZ_pD2-hYnqsKc8tTQag/viewform?usp=dialog";
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f1c2e] via-[#14253f] to-[#1c3558]">
+    <section className="relative min-h-screen overflow-hidden section-navy">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="circle-accent-navy w-[520px] h-[520px] -top-32 -left-32 opacity-70" />
+        <div className="circle-accent-navy w-[600px] h-[600px] bottom-[-200px] right-[-180px] opacity-60" />
+        <div className="circle-accent w-[300px] h-[300px] top-[25%] right-[15%] opacity-50" />
+        <div className="absolute -top-10 left-16 w-[240px] h-[240px] rounded-full border border-white/10 bg-white/5 blur-xl" />
+        <div className="absolute bottom-20 right-28 w-[260px] h-[260px] rounded-full border border-white/10 bg-white/5 blur-xl" />
+      </div>
 
-      {/* GRADIENT BALLS */}
-      <div className="absolute w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl top-[-150px] left-[-150px]" />
-      <div className="absolute w-[600px] h-[600px] bg-sky-400/10 rounded-full blur-3xl bottom-[-200px] right-[-150px]" />
-      <div className="absolute w-[300px] h-[300px] bg-indigo-400/10 rounded-full blur-2xl top-[30%] right-[10%]" />
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl items-center justify-center px-6 text-center">
+        <div>
+          <div className="mb-10 flex justify-center">
+            <img
+              src={balLogoAlt}
+              alt="BAL Foods Group"
+              className="h-auto w-[150px] md:w-[165px]"
+            />
+          </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-
-        {/* LOGO */}
-        <div className="mb-10">
-          <h1 className="font-playfair text-5xl md:text-6xl text-white tracking-wide">
-            BAL
-          </h1>
-          <p className="text-sm text-white/70 tracking-wide mt-2">
-            Foods Group Pty Ltd
+          <p className="mb-8 text-[11px] md:text-xs uppercase tracking-[0.35em] text-[#6fb0df]">
+            PREMIUM AUSTRALIAN MEATS & SEAFOOD
           </p>
-        </div>
 
-        {/* SUBTEXT */}
-        <p className="text-xs tracking-[0.3em] text-sky-300 uppercase mb-6">
-          Premium Australian Meats & Seafood
-        </p>
+          <h2 className="font-playfair text-[42px] md:text-[72px] leading-[1.05] text-white">
+            Built for Importers.
+            <br />
+            <span className="block text-[#8eb7d8]">
+              Backed by Australian Supply.
+            </span>
+          </h2>
 
-        {/* HEADLINE */}
-        <h2 className="font-playfair text-4xl md:text-6xl leading-tight text-white">
-          Built for Importers.
-          <br />
-          <span className="text-sky-300">
-            Backed by Australian Supply.
-          </span>
-        </h2>
+          <p className="mt-7 text-sm md:text-base italic text-white/75">
+            Export-Ready · Reliable Service · Consistent Quality
+          </p>
 
-        {/* SUPPORT TEXT */}
-        <p className="mt-6 text-white/70 italic">
-          Export-Ready · Reliable Service · Consistent Quality
-        </p>
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              to="/catalogue"
+              className="px-7 py-3.5 bg-white text-slate-900 rounded-xl font-medium hover:bg-gray-200 transition"
+            >
+              View Product Range
+            </Link>
 
-        {/* BUTTONS */}
-        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-          <Link
-            to="/catalogue"
-            className="px-6 py-3 bg-white text-slate-900 rounded-lg font-medium hover:bg-gray-200 transition"
-          >
-            View Product Range
-          </Link>
-
-          <Link
-            to="/contact"
-            className="px-6 py-3 border border-white/30 text-white rounded-lg font-medium hover:bg-white/10 transition"
-          >
-            Enquire Now
-          </Link>
+            <a
+              href={enquiryUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="px-7 py-3.5 border border-white/30 rounded-xl font-medium text-white hover:bg-white/10 transition"
+            >
+              Enquire Now
+            </a>
+          </div>
         </div>
       </div>
     </section>
