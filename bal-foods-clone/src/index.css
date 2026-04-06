@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 30% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+    --primary: 215 50% 18%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 195 25% 90%;
+    --secondary-foreground: 215 50% 18%;
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 15% 50%;
+    --accent: 185 30% 40%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 215 50% 18%;
+    --radius: 0.75rem;
+    --navy: 220 40% 13%;
+    --teal: 195 35% 38%;
+    --sky: 200 40% 65%;
+    --soft-blue: 205 35% 85%;
+    --gradient-brand: linear-gradient(135deg, hsl(215 50% 18%), hsl(195 30% 35%), hsl(200 40% 55%));
+    --gradient-navy: linear-gradient(160deg, hsl(220 40% 13%), hsl(225 35% 18%), hsl(215 30% 22%));
+    --gradient-circle: radial-gradient(circle, hsl(195 30% 85% / 0.4), hsl(200 35% 90% / 0.1));
+    --gradient-circle-navy: radial-gradient(circle, hsl(210 40% 28% / 0.8), hsl(220 35% 18% / 0.3));
+  }
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground antialiased; font-family: 'Raleway', sans-serif; }
+  h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', Georgia, serif; }
+}
+
+.circle-accent { position: absolute; border-radius: 50%; pointer-events: none; background: var(--gradient-circle); filter: blur(40px); }
+.circle-accent-navy { position: absolute; border-radius: 50%; pointer-events: none; background: var(--gradient-circle-navy); filter: blur(30px); }
+.section-navy { background: var(--gradient-navy); }
+.gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.scroll-hidden { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.scroll-visible { opacity: 1; transform: translateY(0); }
+.scroll-hidden-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.scroll-hidden-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.scroll-visible-x { opacity: 1; transform: translateX(0); }
+.catalogue-flipbook { box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6), 0 0 120px -30px rgba(0,0,0,0.4); }
+.catalogue-flipbook .page-content { background: hsl(220, 35%, 12%); overflow: hidden; }
+.catalogue-flipbook .page-content img { pointer-events: none; user-select: none; }
+.catalogue-flipbook .stf__parent { background: transparent !important; }
