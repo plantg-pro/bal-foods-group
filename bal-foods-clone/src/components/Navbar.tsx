@@ -37,13 +37,12 @@ const Navbar = () => {
         </Link>
 
         <nav className="flex items-center gap-6 md:gap-8">
-          <button
-            type="button"
-            onClick={() => goToSection("about")}
+          <Link
+            to="/about"
             className="text-sm text-foreground transition hover:text-accent"
           >
             About
-          </button>
+          </Link>
 
           <button
             type="button"
