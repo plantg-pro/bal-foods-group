@@ -1,20 +1,24 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+
 import Index from "./pages/Index";
-import Catalogue from "./pages/Catalogue";
 import AboutPage from "./pages/AboutPage";
+import Catalogue from "./pages/Catalogue";
 import NotFound from "./pages/NotFound";
 
-const App = () => {
+function App() {
   return (
-    <BrowserRouter>
+    <Router>
+      <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/catalogue" element={<Catalogue />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
-};
+}
 
 export default App;

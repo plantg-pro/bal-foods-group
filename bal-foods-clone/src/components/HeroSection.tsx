@@ -1,51 +1,61 @@
+import { Link } from "react-router-dom";
+
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f1c2e] via-[#16253d] to-[#1e3556] text-white overflow-hidden">
-      
-      {/* Background glow shapes */}
-      <div className="absolute bottom-[-120px] right-[-120px] w-[500px] h-[500px] bg-[#6fa3c8]/20 rounded-full blur-3xl" />
-      <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-[#6fa3c8]/10 rounded-full blur-3xl" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f1c2e] via-[#14253f] to-[#1c3558]">
 
-      <div className="relative z-10 text-center px-6 max-w-4xl">
-        
-        {/* Logo */}
+      {/* GRADIENT BALLS */}
+      <div className="absolute w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl top-[-150px] left-[-150px]" />
+      <div className="absolute w-[600px] h-[600px] bg-sky-400/10 rounded-full blur-3xl bottom-[-200px] right-[-150px]" />
+      <div className="absolute w-[300px] h-[300px] bg-indigo-400/10 rounded-full blur-2xl top-[30%] right-[10%]" />
+
+      {/* CONTENT */}
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+
+        {/* LOGO */}
         <div className="mb-10">
-          <h1 className="font-playfair text-5xl md:text-6xl tracking-wide">
+          <h1 className="font-playfair text-5xl md:text-6xl text-white tracking-wide">
             BAL
           </h1>
-          <p className="text-sm mt-2 tracking-wide text-white/70">
+          <p className="text-sm text-white/70 tracking-wide mt-2">
             Foods Group Pty Ltd
           </p>
         </div>
 
-        {/* Subheading */}
-        <p className="text-xs tracking-[0.35em] text-[#7fb3d5] mb-6 uppercase">
+        {/* SUBTEXT */}
+        <p className="text-xs tracking-[0.3em] text-sky-300 uppercase mb-6">
           Premium Australian Meats & Seafood
         </p>
 
-        {/* Main Heading */}
-        <h2 className="font-playfair text-4xl md:text-6xl leading-tight">
+        {/* HEADLINE */}
+        <h2 className="font-playfair text-4xl md:text-6xl leading-tight text-white">
           Built for Importers.
           <br />
-          <span className="text-[#7fb3d5]">
+          <span className="text-sky-300">
             Backed by Australian Supply.
           </span>
         </h2>
 
-        {/* Supporting Line */}
-        <p className="mt-6 text-sm md:text-base italic text-white/70">
+        {/* SUPPORT TEXT */}
+        <p className="mt-6 text-white/70 italic">
           Export-Ready · Reliable Service · Consistent Quality
         </p>
 
-        {/* CTA Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-6 py-3 bg-white text-slate-900 rounded-lg font-medium hover:bg-gray-200 transition">
+        {/* BUTTONS */}
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+          <Link
+            to="/catalogue"
+            className="px-6 py-3 bg-white text-slate-900 rounded-lg font-medium hover:bg-gray-200 transition"
+          >
             View Product Range
-          </button>
+          </Link>
 
-          <button className="px-6 py-3 border border-white/40 rounded-lg font-medium hover:bg-white/10 transition">
+          <Link
+            to="/contact"
+            className="px-6 py-3 border border-white/30 text-white rounded-lg font-medium hover:bg-white/10 transition"
+          >
             Enquire Now
-          </button>
+          </Link>
         </div>
       </div>
     </section>
