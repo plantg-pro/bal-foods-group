@@ -90,7 +90,8 @@ const ProductsSection = () => {
 
                 <a
                   href={product.downloadUrl}
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-auto pt-4 font-body text-sm font-medium text-accent group-hover:text-teal transition-colors"
                 >
                   Explore Range →
