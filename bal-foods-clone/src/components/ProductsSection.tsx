@@ -48,7 +48,9 @@ const ProductsSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div
           ref={headerAnim.ref}
-          className={`text-center mb-16 scroll-hidden ${headerAnim.isVisible ? "scroll-visible" : ""}`}
+          className={`text-center mb-16 scroll-hidden ${
+            headerAnim.isVisible ? "scroll-visible" : ""
+          }`}
         >
           <p className="font-body text-sm tracking-[0.2em] uppercase text-muted-foreground mb-4">
             Product Range
@@ -63,9 +65,15 @@ const ProductsSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {products.map((product, i) => (
-            <div
+            <a
               key={product.name}
-              className={`group relative rounded-2xl overflow-hidden bg-[#d9e0e6] border border-[#c8d0d8] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 scroll-hidden ${gridAnim.isVisible ? "scroll-visible" : ""}`}
+              href={product.downloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Explore ${product.name} range`}
+              className={`group relative block rounded-2xl overflow-hidden bg-[#d9e0e6] border border-[#c8d0d8] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 scroll-hidden ${
+                gridAnim.isVisible ? "scroll-visible" : ""
+              }`}
               style={{ transitionDelay: gridAnim.isVisible ? `${i * 120}ms` : "0ms" }}
             >
               <div className="aspect-[4/3] overflow-hidden">
@@ -88,16 +96,11 @@ const ProductsSection = () => {
                   {product.description}
                 </p>
 
-                <a
-                  href={product.downloadUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto pt-4 font-body text-sm font-medium text-accent group-hover:text-teal transition-colors"
-                >
+                <span className="mt-auto pt-4 font-body text-sm font-medium text-accent group-hover:text-teal transition-colors">
                   Explore Range →
-                </a>
+                </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
