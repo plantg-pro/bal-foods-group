@@ -11,6 +11,7 @@ const products = [
     image: poultryImg,
     imageClassName: "object-cover object-center",
     imageStyle: {},
+    downloadUrl: "/downloads/BAL-Meats-Poultry-Range.pdf",
   },
   {
     name: "Seafood",
@@ -18,6 +19,7 @@ const products = [
     image: seafoodImg,
     imageClassName: "object-cover object-center",
     imageStyle: {},
+    downloadUrl: "/downloads/BAL-Combined-Seafood.pdf",
   },
   {
     name: "Produce",
@@ -25,6 +27,7 @@ const products = [
     image: produceImg,
     imageClassName: "object-cover",
     imageStyle: { objectPosition: "center 78%" },
+    downloadUrl: "/downloads/BAL-Produce-Single.pdf",
   },
   {
     name: "Halal Smallgoods",
@@ -32,6 +35,7 @@ const products = [
     image: smallgoodsImg,
     imageClassName: "object-cover object-center",
     imageStyle: {},
+    downloadUrl: "/downloads/BAL-Smallgoods-Single.pdf",
   },
 ];
 
@@ -84,9 +88,13 @@ const ProductsSection = () => {
                   {product.description}
                 </p>
 
-                <span className="mt-auto pt-4 font-body text-sm font-medium text-accent group-hover:text-teal transition-colors cursor-pointer">
+                <a
+                  href={product.downloadUrl}
+                  download
+                  className="mt-auto pt-4 font-body text-sm font-medium text-accent group-hover:text-teal transition-colors"
+                >
                   Explore Range →
-                </span>
+                </a>
               </div>
             </div>
           ))}
