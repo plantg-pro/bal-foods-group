@@ -43,14 +43,16 @@ const ProductsSection = () => {
   const headerAnim = useScrollAnimation();
   const gridAnim = useScrollAnimation(0.1);
 
+  const handleCardClick = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section id="products" className="py-24 md:py-32 bg-[#eef2f5] relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div
           ref={headerAnim.ref}
-          className={`text-center mb-16 scroll-hidden ${
-            headerAnim.isVisible ? "scroll-visible" : ""
-          }`}
+          className={`text-center mb-16 scroll-hidden ${headerAnim.isVisible ? "scroll-visible" : ""}`}
         >
           <p className="font-body text-sm tracking-[0.2em] uppercase text-muted-foreground mb-4">
             Product Range
@@ -65,15 +67,15 @@ const ProductsSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {products.map((product, i) => (
-            <a
+            <div
               key={product.name}
-              href={product.downloadUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Explore ${product.name} range`}
-              className={`group relative block rounded-2xl overflow-hidden bg-[#d9e0e6] border border-[#c8d0d8] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 scroll-hidden ${
-                gridAnim.isVisible ? "scroll-visible" : ""
-              }`}
+              role="button"
+              tabIndex={0}
+              onClick={() => handleCardClick(product.downloadUrl)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleCardClick(product.downloadUrl);
+              }}
+              className={`group relative cursor-pointer rounded-2xl overflow-hidden bg-[#d9e0e6] border border-[#c8d0d8] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 scroll-hidden ${gridAnim.isVisible ? "scroll-visible" : ""}`}
               style={{ transitionDelay: gridAnim.isVisible ? `${i * 120}ms` : "0ms" }}
             >
               <div className="aspect-[4/3] overflow-hidden">
@@ -84,7 +86,7 @@ const ProductsSection = () => {
                   style={product.imageStyle}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
               </div>
 
               <div className="p-6 flex flex-col min-h-[190px]">
@@ -100,7 +102,7 @@ const ProductsSection = () => {
                   Explore Range →
                 </span>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
